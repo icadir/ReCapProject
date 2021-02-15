@@ -39,5 +39,10 @@ namespace Business.Concrete
             else
                 _carDal.Add(car);
         }
+
+        public void Update(Car car)
+        {
+            _carDal.Update(car);
+        }
     }
 }
