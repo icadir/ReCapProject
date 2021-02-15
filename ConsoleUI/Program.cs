@@ -11,6 +11,18 @@ namespace ConsoleUI
         {
             //Test();
 
+            // CrudTest();
+
+            CarManager _carManager = new CarManager(new EfCarDal());
+
+            foreach (var car in _carManager.GetCarDetails())
+            {
+                Console.WriteLine($"{car.CarId}--{car.CarName}--{car.BrandName}--{car.ColorName}--{car.DailyPrice}");
+            }
+        }
+
+        private static void CrudTest()
+        {
             BrandManager _brandManager = new BrandManager(new EfBrandDal());
             CarManager _carManager = new CarManager(new EfCarDal());
             ColorManager _colorManager = new ColorManager(new EfColorDal());
@@ -32,8 +44,6 @@ namespace ConsoleUI
             {
                 Name = "PembeX"
             });
-
-
         }
 
         private static void Test()
