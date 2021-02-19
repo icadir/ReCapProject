@@ -8,8 +8,8 @@ namespace Business.Abstract
     {
         IDataResult<List<Rental>> GetAll();
         IDataResult<Rental> GetById();
-        IResult Add(Rental user);
-        IResult Update(Rental user);
-        IResult Delete(Rental user);
+        IResult Add(Rental rental);
+        IResult Update(Rental rental);
+        IResult Delete(Rental rental);
     }
 }

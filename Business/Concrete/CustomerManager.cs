@@ -27,17 +27,18 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IResult Add(Customer user)
+        public IResult Add(Customer customer)
+        {
+           _customerDal.Add(customer);
+           return new SuccessResult("Müşteri Eklendi.");
+        }
+
+        public IResult Update(Customer customer)
         {
             throw new NotImplementedException();
         }
 
-        public IResult Update(Customer user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IResult Delete(Customer user)
+        public IResult Delete(Customer customer)
         {
             throw new NotImplementedException();
         }

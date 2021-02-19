@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Business.Abstract;
+using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -28,7 +29,8 @@ namespace Business.Concrete
 
         public IResult Add(User user)
         {
-            throw new NotImplementedException();
+            _userDal.Add(user);
+            return new SuccessResult(Messages.UserAdded);
         }
 
         public IResult Update(User user)

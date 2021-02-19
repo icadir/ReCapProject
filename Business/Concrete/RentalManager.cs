@@ -27,17 +27,18 @@ namespace Business.Concrete
             throw new NotImplementedException();
         }
 
-        public IResult Add(Rental user)
+        public IResult Add(Rental rental)
+        {
+            _rentalDal.Add(rental);
+            return new SuccessResult("Kiralama İşlemi Tamamlandı.");
+        }
+
+        public IResult Update(Rental rental)
         {
             throw new NotImplementedException();
         }
 
-        public IResult Update(Rental user)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IResult Delete(Rental user)
+        public IResult Delete(Rental rental)
         {
             throw new NotImplementedException();
         }

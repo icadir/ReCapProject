@@ -24,12 +24,12 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
         {
-            return _carDal.GetAll(x => x.BrandId == brandId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(x => x.BrandId == brandId));
         }
 
         public IDataResult<List<Car>> GetCarsByColorId(int colorId)
         {
-            return _carDal.GetAll(x => x.ColorId == colorId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(x => x.ColorId == colorId));
         }
 
         public IResult Add(Car car)
@@ -39,7 +39,7 @@ namespace Business.Concrete
             else if (car.DailyPrice <= 0)
                 return new ErrorResult(Messages.CarPriceWarning);
             else
-                _carDal.Add(car);
+             _carDal.Add(car);
 
             return new Result(true, Messages.CarAdded);
         }
