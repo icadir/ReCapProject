@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Business.Abstract;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -19,28 +17,30 @@ namespace Business.Concrete
 
         public IDataResult<List<Customer>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll());
         }
 
-        public IDataResult<Customer> GetById()
+        public IDataResult<Customer> GetById(int id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Customer>(_customerDal.GetById(x => x.Id == id));
         }
 
         public IResult Add(Customer customer)
         {
-           _customerDal.Add(customer);
-           return new SuccessResult("Müşteri Eklendi.");
+            _customerDal.Add(customer);
+            return new SuccessResult("Müşteri Eklendi.");
         }
 
         public IResult Update(Customer customer)
         {
-            throw new NotImplementedException();
+           _customerDal.Update(customer);
+           return new SuccessResult("Müşteri Update Edildi..");
         }
 
         public IResult Delete(Customer customer)
         {
-            throw new NotImplementedException();
+            _customerDal.Delete(customer);
+            return new SuccessResult("Müşteri Silindi.");
         }
     }
 }

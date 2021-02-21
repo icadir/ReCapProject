@@ -17,12 +17,12 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        public IDataResult<List<Car>> GetAllCar()
+        public IDataResult<List<Car>> GetAll()
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll());
         }
 
-        public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
+        public IDataResult<List<Car>> GetById(int brandId)
         {
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(x => x.BrandId == brandId));
         }

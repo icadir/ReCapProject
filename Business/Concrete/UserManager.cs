@@ -19,12 +19,12 @@ namespace Business.Concrete
 
         public IDataResult<List<User>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<User>>(_userDal.GetAll());
         }
 
-        public IDataResult<User> GetById()
+        public IDataResult<User> GetById(int Id)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<User>(_userDal.GetById(x => x.Id == Id));
         }
 
         public IResult Add(User user)
@@ -35,12 +35,14 @@ namespace Business.Concrete
 
         public IResult Update(User user)
         {
-            throw new NotImplementedException();
+            _userDal.Update(user);
+            return new SuccessResult(Messages.UserUpdated);
         }
 
         public IResult Delete(User user)
         {
-            throw new NotImplementedException();
+            _userDal.Delete(user);
+            return new SuccessResult(Messages.UserDeleted);
         }
     }
 }

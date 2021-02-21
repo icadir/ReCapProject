@@ -7,7 +7,7 @@ namespace Business.Abstract
     public interface IUserService
     {
         IDataResult<List<User>> GetAll();
-        IDataResult<User> GetById();
+        IDataResult<User> GetById(int Id);
         IResult Add(User user);
         IResult Update(User user);
         IResult Delete(User user);

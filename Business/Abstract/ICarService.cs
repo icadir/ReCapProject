@@ -7,8 +7,8 @@ namespace Business.Abstract
 {
     public interface ICarService
     {
-        IDataResult<List<Car>> GetAllCar();
-        IDataResult<List<Car>> GetCarsByBrandId(int brandId);
+        IDataResult<List<Car>> GetAll();
+        IDataResult<List<Car>> GetById(int brandId);
         IDataResult<List<Car>> GetCarsByColorId(int colorId);
         IResult Add(Car car);
         IResult Update(Car car);
